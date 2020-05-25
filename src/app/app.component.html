@@ -1,0 +1,26 @@
+
+<input type="text" [(ngModel)]="title"/>
+
+<p>{{title}}</p>
+<div *ngIf="title === 'm'">
+Shi sheñol
+</div>
+
+<div [ngSwitch]=title>
+<a *ngSwitchCase="'lalo'" >Hola soy lalo</a>
+<label *ngSwitchCase="'choi'" >Hola soy choi</label>
+<label *ngSwitchCase="'pesqui'" >Hola soy pesqui</label>
+<a *ngSwitchDefault>NO hay match</a>
+</div>
+
+<button (click)="addItem()" >add Item</button>
+<ul>
+    <li *ngIf="items.length ===0" >
+        Lista esta vacia
+    </li>
+    <li *ngFor="let name of items; index as i" >
+        {{name}} {{i}}
+        <button (click)="deleteItem(i)">Borrar item</button>
+    </li>
+</ul>
+
